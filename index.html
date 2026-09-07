@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Business Analytics & Computer Information Systems</title>
+  <title>Asifa Iqbal | Business Analytics & Computer Information Systems</title>
   <style>
     :root {
       --bg-primary: #ffffff;
-      --bg-surface: #fdfcfb;
+      --bg-surface: #f8fafc;
       --bg-card: #ffffff;
-      --border-color: #c5a059;       /* Muted gold outline */
-      --border-subtle: #e5d5b5;     /* Soft gold accent */
-      --text-primary: #4a1525;      /* Deep burgundy */
-      --text-muted: #6e3a47;        /* Soft burgundy */
-      --accent-gold: #b38a38;       /* Primary gold button */
-      --accent-gold-hover: #96722a;
-      --tag-bg: #f9f5ed;            /* Warm parchment tag */
-      --tag-text: #5a1e2d;
+      --navy-primary: #0a192f;
+      --navy-secondary: #1e3a5f;
+      --text-muted: #475569;
+      --accent-gold: #c5a059;
+      --accent-gold-hover: #a3803e;
+      --border-color: #cbd5e1;
+      --border-subtle: #e2e8f0;
+      --tag-bg: #f1f5f9;
+      --tag-border: #cbd5e1;
     }
 
     * {
@@ -28,17 +29,16 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-primary);
-      color: var(--text-primary);
+      color: var(--navy-primary);
       line-height: 1.6;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Navigation */
     header {
       border-bottom: 1px solid var(--border-subtle);
       background-color: rgba(255, 255, 255, 0.95);
@@ -52,15 +52,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 4rem;
+      height: 4.25rem;
     }
 
     .nav-brand {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      color: var(--text-primary);
+      color: var(--navy-primary);
       text-decoration: none;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
     }
 
     .nav-brand span {
@@ -82,10 +82,9 @@
     }
 
     .nav-links a:hover {
-      color: var(--accent-gold);
+      color: var(--navy-secondary);
     }
 
-    /* Hero Section */
     .hero {
       padding: 5rem 0 3.5rem;
     }
@@ -95,7 +94,7 @@
       padding: 0.3rem 0.85rem;
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--text-primary);
+      color: var(--navy-secondary);
       background: var(--tag-bg);
       border: 1px solid var(--border-color);
       border-radius: 9999px;
@@ -110,13 +109,13 @@
       line-height: 1.2;
       margin-bottom: 1.25rem;
       letter-spacing: -0.03em;
-      color: var(--text-primary);
+      color: var(--navy-primary);
     }
 
     .hero p {
       font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 720px;
+      max-width: 780px;
       margin-bottom: 2rem;
     }
 
@@ -139,20 +138,20 @@
     }
 
     .btn-primary {
-      background-color: var(--accent-gold);
+      background-color: var(--navy-primary);
       color: #ffffff;
-      border: 1px solid var(--accent-gold);
+      border: 1px solid var(--navy-primary);
     }
 
     .btn-primary:hover {
-      background-color: var(--accent-gold-hover);
-      border-color: var(--accent-gold-hover);
+      background-color: var(--navy-secondary);
+      border-color: var(--navy-secondary);
     }
 
     .btn-secondary {
       background-color: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
+      color: var(--navy-primary);
+      border: 1.5px solid var(--accent-gold);
     }
 
     .btn-secondary:hover {
@@ -160,7 +159,6 @@
       border-color: var(--accent-gold-hover);
     }
 
-    /* Sections */
     section {
       padding: 4rem 0;
       border-top: 1px solid var(--border-subtle);
@@ -171,7 +169,7 @@
       font-weight: 700;
       margin-bottom: 0.5rem;
       letter-spacing: -0.02em;
-      color: var(--text-primary);
+      color: var(--navy-primary);
     }
 
     .section-subtitle {
@@ -180,24 +178,24 @@
       margin-bottom: 2.5rem;
     }
 
-    /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
     .skill-card {
       background: var(--bg-surface);
-      border: 1.5px solid var(--border-color);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--accent-gold);
       border-radius: 8px;
       padding: 1.5rem;
     }
 
     .skill-card h3 {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       margin-bottom: 1rem;
-      color: var(--text-primary);
+      color: var(--navy-primary);
     }
 
     .skill-list {
@@ -208,37 +206,38 @@
     }
 
     .tag {
-      background-color: var(--tag-bg);
-      color: var(--tag-text);
-      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-card);
+      color: var(--navy-secondary);
+      border: 1px solid var(--tag-border);
       font-size: 0.8rem;
       font-weight: 600;
       padding: 0.3rem 0.65rem;
       border-radius: 4px;
     }
 
-    /* Project Cards */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
     .project-card {
-      background: var(--bg-surface);
-      border: 1.5px solid var(--border-color);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-gold);
       border-radius: 8px;
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .project-card h3 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin-bottom: 0.75rem;
       letter-spacing: -0.01em;
-      color: var(--text-primary);
+      color: var(--navy-primary);
     }
 
     .project-card p {
@@ -252,25 +251,54 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    .project-links a {
-      color: var(--accent-gold);
-      text-decoration: none;
-      font-weight: 600;
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy-primary);
+    }
+
+    .timeline-date {
       font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
+      color: var(--accent-gold);
+      font-weight: 600;
     }
 
-    .project-links a:hover {
-      color: var(--accent-gold-hover);
-      text-decoration: underline;
+    .timeline-subtitle {
+      font-size: 0.95rem;
+      color: var(--navy-secondary);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
     }
 
-    /* Footer */
+    .timeline-item ul {
+      list-style-position: inside;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
     footer {
       border-top: 1px solid var(--border-subtle);
       padding: 2.5rem 0;
@@ -291,142 +319,164 @@
 </head>
 <body>
 
-  <!-- Header Navigation -->
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="nav-brand">DevPortfolio<span>.io</span></a>
+        <a href="#" class="nav-brand">Asifa Iqbal<span>.</span></a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <main class="container">
     <section class="hero" id="about">
-      <span class="hero-badge">Business Analytics &amp; Information Systems</span>
-      <h1>Bridging data-driven analytics with enterprise system design.</h1>
+      <span class="hero-badge">Business Analytics &amp; Computer Information Systems</span>
+      <h1>Quantitative modeling, enterprise architecture, and operational optimization.</h1>
       <p>
-        Undergraduate student double majoring in Business Analytics and Computer Information Systems. Focused on database architecture, business intelligence pipelines, web technologies, and decentralized systems.
+        Double major in Business Analytics and Computer Information Systems with an engineering background[cite: 1]. Experienced in SQL schema architecture, Python, R, machine learning classification pipelines, and Lean Six Sigma frameworks to build scalable data infrastructure[cite: 1].
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">Explore Projects</a>
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="https://www.linkedin.com/in/asifaiqbal-quinnipiac/" class="btn btn-secondary" target="_blank">LinkedIn Profile</a>
         <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
       </div>
     </section>
 
-    <!-- Technical Matrix -->
     <section id="skills">
       <h2 class="section-title">Technical Capabilities</h2>
-      <p class="section-subtitle">Core toolsets, programming environments, and analytical stacks.</p>
+      <p class="section-subtitle">Core analytical toolsets, schema engineering, and data pipeline frameworks[cite: 1].</p>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Data &amp; Analytics</h3>
+          <h3>Languages &amp; Querying</h3>
           <ul class="skill-list">
-            <li class="tag">SQL</li>
+            <li class="tag">SQL (MySQL)</li>
+            <li class="tag">Stored Procedures &amp; Views</li>
             <li class="tag">Python (Pandas, NumPy)</li>
-            <li class="tag">R</li>
-            <li class="tag">Tableau / PowerBI</li>
-            <li class="tag">Excel (Modeling)</li>
+            <li class="tag">R Programming</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3>Systems &amp; Dev</h3>
+          <h3>Architecture &amp; Modeling</h3>
           <ul class="skill-list">
             <li class="tag">Relational Database Design</li>
-            <li class="tag">HTML5 / CSS3</li>
-            <li class="tag">JavaScript</li>
-            <li class="tag">Git &amp; GitHub</li>
-            <li class="tag">API Integration</li>
+            <li class="tag">ERD Modeling</li>
+            <li class="tag">ETL Pipelines</li>
+            <li class="tag">DFD &amp; UML Mapping</li>
           </ul>
         </div>
         <div class="skill-card">
-          <h3>Domains &amp; Concepts</h3>
+          <h3>Analytics &amp; Optimization</h3>
           <ul class="skill-list">
-            <li class="tag">Blockchain Infrastructure</li>
-            <li class="tag">Process Automation</li>
-            <li class="tag">Systems Analysis</li>
-            <li class="tag">Predictive Modeling</li>
+            <li class="tag">Tableau / Power BI</li>
+            <li class="tag">Excel (VBA, Modeling)</li>
+            <li class="tag">Lean Six Sigma (DMAIC)</li>
+            <li class="tag">Predictive Machine Learning</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Featured Projects -->
     <section id="projects">
       <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Academic, systems implementation, and technical initiatives.</p>
+      <p class="section-subtitle">Machine learning pipelines, relational database design, and systems engineering[cite: 1].</p>
       <div class="projects-grid">
-        <!-- Project 1 -->
         <div class="project-card">
           <div>
-            <h3>Enterprise Analytics Pipeline</h3>
-            <p>Designed and deployed an ETL pipeline to aggregate transactional data, running predictive forecasting models and automating monthly reporting outputs.</p>
+            <h3>Instacart Predictive Reorder System</h3>
+            <p>Engineered an end-to-end binary classification pipeline across 1.38M+ transactions from a 3M+ order dataset[cite: 1]. Extracted 12 behavioral and cart-sequencing features to train Random Forest and Logistic Regression models driving a recommendation engine[cite: 1].</p>
             <div class="project-meta">
               <span class="tag">Python</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Pandas</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Feature Engineering</span>
             </div>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com" target="_blank">View Repository &rarr;</a>
           </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card">
           <div>
-            <h3>Decentralized Ledger Interface</h3>
-            <p>Front-end architecture and interface for tracking token metrics and club member event records, optimized for zero-dependency browser performance.</p>
+            <h3>Urban Traffic Incident Analytics Model</h3>
+            <p>Evaluated 500k+ municipal records to uncover collision drivers, discovering intersections caused 44% of injuries despite comprising only 22% of crashes[cite: 1]. Formulated data-driven safety interventions targeting high-density incident zones[cite: 1].</p>
             <div class="project-meta">
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">Web3 Basics</span>
-              <span class="tag">UI Design</span>
+              <span class="tag">R</span>
+              <span class="tag">Data Visualization</span>
+              <span class="tag">Risk Modeling</span>
             </div>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com" target="_blank">View Repository &rarr;</a>
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="project-card">
           <div>
-            <h3>Relational Database Architecture</h3>
-            <p>Normalized operational schema up to 3NF for a mock logistics enterprise, implementing stored procedures, indexing strategies, and automated triggers.</p>
+            <h3>Scuderia Ferrari Telemetry Database</h3>
+            <p>Designed a normalized relational SQL schema ingesting multi-variable telemetry data to detect tactical and mechanical bottlenecks[cite: 1]. Automated stored procedures and conditional aggregation views for downstream analytics[cite: 1].</p>
             <div class="project-meta">
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Schema Design</span>
-              <span class="tag">Optimization</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Relational Schemas</span>
+              <span class="tag">Stored Procedures</span>
             </div>
           </div>
-          <div class="project-links">
-            <a href="https://github.com" target="_blank">View Repository &rarr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <h3>QMAP: Campus Navigation Architecture</h3>
+            <p>Engineered systems architecture for a campus mobile platform using Data Flow Diagrams (DFDs) and UML use cases[cite: 1]. Produced complete technical specifications, interface mockups, implementation schedules, and cost-benefit analysis[cite: 1].</p>
+            <div class="project-meta">
+              <span class="tag">Systems Analysis</span>
+              <span class="tag">UML</span>
+              <span class="tag">DFD Architecture</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact / Footer Section -->
+    <section id="experience">
+      <h2 class="section-title">Education &amp; Credentials</h2>
+      <p class="section-subtitle">Academic profile and technical certifications[cite: 1].</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Quinnipiac University — School of Business</span>
+            <span class="timeline-date">Exp. May 2027 / May 2028</span>
+          </div>
+          <div class="timeline-subtitle">B.S. Business Analytics &amp; Computer Information Systems (GPA 3.53) | M.S. Applied AI &amp; Business Analytics</div>
+          <ul>
+            <li>Minor in Manufacturing Engineering | University Honors Program, Presidential Scholarship, Dean's List[cite: 1]</li>
+            <li>Coursework: Statistical Programming with R, Database Design, Machine Learning for Business, Data Visualization[cite: 1]</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <span class="timeline-title">Management &amp; Strategy Institute</span>
+            <span class="timeline-date">August 2026</span>
+          </div>
+          <div class="timeline-subtitle">Lean Six Sigma White Belt Certified</div>
+          <ul>
+            <li>Applied DMAIC frameworks, SIPOC diagrams, and value stream mapping to eliminate operational bottlenecks[cite: 1].</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-subtitle">Available for internships, analyst roles, and technical collaborations.</p>
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Available for analytics, data engineering, and business technology roles[cite: 1].</p>
       <div class="hero-actions">
-        <a href="mailto:your.email@example.com" class="btn btn-primary">Send Email</a>
-        <a href="https://www.linkedin.com/in/asifaiqbal-quinnipiac/" class="btn btn-secondary" target="_blank">LinkedIn</a>
-        <a href="https://github.com" class="btn btn-secondary" target="_blank">GitHub Profile</a>
+        <a href="mailto:asifa.iqbal@quinnipiac.edu" class="btn btn-primary">asifa.iqbal@quinnipiac.edu</a>
+        <a href="https://www.linkedin.com/in/asifaiqbal-quinnipiac/" class="btn btn-secondary" target="_blank">LinkedIn Profile</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Portfolio. Hosted directly via GitHub Pages.</p>
+      <p>&copy; 2026 Asifa Iqbal. Hosted via GitHub Pages.</p>
     </div>
   </footer>
 
