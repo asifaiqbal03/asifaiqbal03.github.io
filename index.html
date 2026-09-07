@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Business Analytics & Computer Information Systems</title>
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-surface: #fdfcfb;
+      --bg-card: #ffffff;
+      --border-color: #c5a059;       /* Muted gold outline */
+      --border-subtle: #e5d5b5;     /* Soft gold accent */
+      --text-primary: #4a1525;      /* Deep burgundy */
+      --text-muted: #6e3a47;        /* Soft burgundy */
+      --accent-gold: #b38a38;       /* Primary gold button */
+      --accent-gold-hover: #96722a;
+      --tag-bg: #f9f5ed;            /* Warm parchment tag */
+      --tag-text: #5a1e2d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      background-color: rgba(255, 255, 255, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 4rem;
+    }
+
+    .nav-brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.025em;
+    }
+
+    .nav-brand span {
+      color: var(--accent-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 0 3.5rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--tag-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-gold);
+      color: #ffffff;
+      border: 1px solid var(--accent-gold);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-gold-hover);
+      border-color: var(--accent-gold-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--tag-bg);
+      border-color: var(--accent-gold-hover);
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 4px;
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-links a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .project-links a:hover {
+      color: var(--accent-gold-hover);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="nav-brand">DevPortfolio<span>.io</span></a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero" id="about">
+      <span class="hero-badge">Business Analytics &amp; Information Systems</span>
+      <h1>Bridging data-driven analytics with enterprise system design.</h1>
+      <p>
+        Undergraduate student double majoring in Business Analytics and Computer Information Systems. Focused on database architecture, business intelligence pipelines, web technologies, and decentralized systems.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Explore Projects</a>
+        <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+      </div>
+    </section>
+
+    <!-- Technical Matrix -->
+    <section id="skills">
+      <h2 class="section-title">Technical Capabilities</h2>
+      <p class="section-subtitle">Core toolsets, programming environments, and analytical stacks.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Data &amp; Analytics</h3>
+          <ul class="skill-list">
+            <li class="tag">SQL</li>
+            <li class="tag">Python (Pandas, NumPy)</li>
+            <li class="tag">R</li>
+            <li class="tag">Tableau / PowerBI</li>
+            <li class="tag">Excel (Modeling)</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Systems &amp; Dev</h3>
+          <ul class="skill-list">
+            <li class="tag">Relational Database Design</li>
+            <li class="tag">HTML5 / CSS3</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">Git &amp; GitHub</li>
+            <li class="tag">API Integration</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Domains &amp; Concepts</h3>
+          <ul class="skill-list">
+            <li class="tag">Blockchain Infrastructure</li>
+            <li class="tag">Process Automation</li>
+            <li class="tag">Systems Analysis</li>
+            <li class="tag">Predictive Modeling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Academic, systems implementation, and technical initiatives.</p>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div>
+            <h3>Enterprise Analytics Pipeline</h3>
+            <p>Designed and deployed an ETL pipeline to aggregate transactional data, running predictive forecasting models and automating monthly reporting outputs.</p>
+            <div class="project-meta">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Pandas</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com" target="_blank">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div>
+            <h3>Decentralized Ledger Interface</h3>
+            <p>Front-end architecture and interface for tracking token metrics and club member event records, optimized for zero-dependency browser performance.</p>
+            <div class="project-meta">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Web3 Basics</span>
+              <span class="tag">UI Design</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com" target="_blank">View Repository &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div>
+            <h3>Relational Database Architecture</h3>
+            <p>Normalized operational schema up to 3NF for a mock logistics enterprise, implementing stored procedures, indexing strategies, and automated triggers.</p>
+            <div class="project-meta">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Schema Design</span>
+              <span class="tag">Optimization</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com" target="_blank">View Repository &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <section id="contact">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Available for internships, analyst roles, and technical collaborations.</p>
+      <div class="hero-actions">
+        <a href="mailto:your.email@example.com" class="btn btn-primary">Send Email</a>
+        <a href="https://linkedin.com" class="btn btn-secondary" target="_blank">LinkedIn</a>
+        <a href="https://github.com" class="btn btn-secondary" target="_blank">GitHub Profile</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Portfolio. Hosted directly via GitHub Pages.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
