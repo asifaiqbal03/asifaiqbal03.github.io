@@ -1,609 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quinnipiac Blockchain Club</title>
-  <meta name="description" content="Quinnipiac Blockchain is a student-led organization providing education, resources, and open discussions around digital assets, Web3, and emerging financial technologies.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quinnipiac Blockchain — Student-Led Blockchain Community at QU</title>
+  <meta name="description" content="Quinnipiac Blockchain is a student-led organization hosting weekly meetings, workshops, guest speakers, and career resources at Quinnipiac University." />
+  <meta property="og:title" content="Quinnipiac Blockchain" />
+  <meta property="og:description" content="Student-led blockchain community based in the School of Business at Quinnipiac University." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
+    /* Theme color definitions matching the custom Tailwind tokens */
     :root {
-      --bg-dark: #070e1b;
-      --bg-card: #0c182b;
-      --bg-card-hover: #10213d;
-      --border-dark: rgba(255, 255, 255, 0.08);
-      --gold: #f59e0b;
-      --gold-hover: #d97706;
-      --gold-light: #fbbf24;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --section-light-bg: #f8fafc;
-      --section-light-card: #ffffff;
-      --section-light-text: #0f172a;
-      --section-light-border: #e2e8f0;
-      --section-light-muted: #64748b;
+      --navy: #0b1a2f;
+      --gold: #d4af37;
+      --paper: #f4ede2;
+      --background: #ffffff;
+      --foreground: #0f172a;
+      --card: #f8fafc;
+      --card-foreground: #0f172a;
+      --border: #e2e8f0;
+      --muted-foreground: #64748b;
+      --secondary: #eef2f6;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    .bg-navy { background-color: var(--navy); }
+    .text-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .text-paper { color: var(--paper); }
+    .bg-paper\/15 { background-color: rgba(244, 237, 226, 0.15); }
+    .border-paper\/15 { border-color: rgba(244, 237, 226, 0.15); }
+    .border-paper\/30 { border-color: rgba(244, 237, 226, 0.30); }
+    .text-paper\/70 { color: rgba(244, 237, 226, 0.70); }
+    .text-paper\/85 { color: rgba(244, 237, 226, 0.85); }
+    .text-paper\/90 { color: rgba(244, 237, 226, 0.90); }
 
-    body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
+    .bg-background { background-color: var(--background); }
+    .text-foreground { color: var(--foreground); }
+    .bg-card { background-color: var(--card); }
+    .text-card-foreground { color: var(--card-foreground); }
+    .border-border { border-color: var(--border); }
+    .divide-border > :not([hidden]) ~ :not([hidden]) { border-color: var(--border); }
+    .text-muted-foreground { color: var(--muted-foreground); }
+    .hover\:bg-secondary:hover { background-color: var(--secondary); }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* HEADER / NAVBAR */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background-color: rgba(7, 14, 27, 0.85);
-      border-bottom: 1px solid var(--border-dark);
-    }
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 4.5rem;
-    }
-
-    .logo-group {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 700;
-    }
-
-    .logo-badge {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.25rem;
-      height: 2.25rem;
-      background-color: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.35);
-      color: var(--gold-light);
-      border-radius: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .logo-text {
-      font-size: 1.05rem;
-      letter-spacing: -0.01em;
-      color: #ffffff;
-    }
-
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 1.75rem;
-    }
-
-    @media (min-width: 860px) {
-      .nav-links {
-        display: flex;
-      }
-    }
-
-    .nav-link {
-      color: var(--text-muted);
-      font-size: 0.925rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-link:hover {
-      color: #ffffff;
-    }
-
-    .btn-header-join {
-      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
-      color: #070e1b;
-      padding: 0.55rem 1.25rem;
-      border-radius: 9999px;
-      font-weight: 700;
-      font-size: 0.875rem;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .btn-header-join:hover {
-      opacity: 0.95;
-      transform: translateY(-1px);
-    }
-
-    /* HERO SECTION */
-    .hero {
-      position: relative;
-      padding: 6rem 0 5rem;
-      overflow: hidden;
-      background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
-    }
-
-    .tagline-chip {
-      display: inline-block;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--gold-light);
-      background: rgba(245, 158, 11, 0.1);
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.25rem, 5vw, 3.75rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      font-weight: 700;
-      max-width: 900px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-lead {
-      margin-top: 1.5rem;
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      max-width: 650px;
-    }
-
-    .btn-group {
-      margin-top: 2.25rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.75rem;
-      border-radius: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-hover));
-      color: #070e1b;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background-color: rgba(255, 255, 255, 0.03);
-      color: #ffffff;
-    }
-
-    .btn-outline:hover {
-      background-color: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    /* STATS / METRICS BAR */
-    .stats-grid {
-      margin-top: 4.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-    }
-
-    .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-dark);
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-    }
-
-    .stat-term {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #ffffff;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .stat-desc {
-      margin-top: 0.35rem;
-      font-size: 0.8rem;
-      text-transform: uppercase;
+    .marker-rule {
       letter-spacing: 0.08em;
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-
-    /* EXPLORE SECTION (GRID CARDS) */
-    .section-light {
-      background-color: var(--section-light-bg);
-      color: var(--section-light-text);
-      padding: 5.5rem 0;
-    }
-
-    .section-light h2 {
-      font-size: 2.25rem;
-      font-family: 'Space Grotesk', sans-serif;
-      letter-spacing: -0.02em;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .card {
-      background: var(--section-light-card);
-      border: 1px solid var(--section-light-border);
-      border-radius: 0.75rem;
-      padding: 2rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 200px;
-      transition: all 0.2s ease;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-      border-color: #cbd5e1;
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
-
-    .card p {
-      font-size: 0.925rem;
-      color: var(--section-light-muted);
-      line-height: 1.6;
-    }
-
-    .card .link-arrow {
-      margin-top: 1.5rem;
-      color: var(--gold-hover);
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    /* FAQ SECTION */
-    .faq-section {
-      background-color: #ffffff;
-      border-top: 1px solid var(--section-light-border);
-      padding: 5.5rem 0;
-      color: var(--section-light-text);
-    }
-
-    .faq-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-chip {
       font-size: 0.75rem;
-      letter-spacing: 0.1em;
+      font-weight: 700;
       text-transform: uppercase;
-      font-weight: 700;
-      color: var(--gold-hover);
-      margin-bottom: 0.5rem;
-    }
-
-    .faq-header h2 {
-      font-size: 2.25rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .faq-list {
-      max-width: 850px;
-      border-top: 1px solid var(--section-light-border);
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--section-light-border);
-    }
-
-    .faq-button {
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      padding: 1.35rem 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--section-light-text);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    .faq-button:hover {
-      color: var(--gold-hover);
-    }
-
-    .faq-icon {
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--section-light-muted);
-      margin-left: 1rem;
-      transition: transform 0.2s ease;
-    }
-
-    .faq-content {
-      display: none;
-      padding-bottom: 1.5rem;
-      color: var(--section-light-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-
-    .faq-content.open {
-      display: block;
-    }
-
-    /* FOOTER */
-    .footer {
-      background-color: var(--bg-dark);
-      border-top: 1px solid var(--border-dark);
-      padding: 4rem 0 3rem;
-      color: var(--text-muted);
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      justify-content: space-between;
-    }
-
-    @media (min-width: 768px) {
-      .footer-content {
-        flex-direction: row;
-        align-items: flex-start;
-      }
-    }
-
-    .footer-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.4rem;
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .footer-nav a {
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-nav a:hover {
-      color: #ffffff;
-    }
-
-    .footer-bottom {
-      margin-top: 3.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-dark);
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      color: rgba(148, 163, 184, 0.6);
     }
   </style>
 </head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="#" class="logo-group">
-        <span class="logo-badge">QB</span>
-        <span class="logo-text">Quinnipiac Blockchain Club</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#activities" class="nav-link">What We Do</a>
-        <a href="#events" class="nav-link">Events</a>
-        <a href="#values" class="nav-link">Values</a>
-        <a href="#courses" class="nav-link">Courses</a>
-        <a href="#connect" class="nav-link">Connect</a>
-        <a href="#join" class="btn-header-join">Join</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-background text-foreground antialiased">
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container">
-      <span class="tagline-chip">SCHOOL OF BUSINESS · QUINNIPIAC UNIVERSITY · HAMDEN, CT</span>
-      <h1>Building a vibrant <span>blockchain community</span> at Quinnipiac and beyond.</h1>
-      <p class="hero-lead">Quinnipiac Blockchain is a student-led organization providing education, resources, and open discussions around digital assets, Web3, and emerging financial technologies.</p>
+  <section class="relative overflow-hidden bg-navy text-paper">
+    <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy to-[#0c1a2e]"></div>
 
-      <div class="btn-group">
-        <a href="#join" class="btn btn-gold">Become a member</a>
-        <a href="#activities" class="btn btn-outline">What we do &rarr;</a>
+    <div class="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-36">
+      <p class="marker-rule text-gold">SCHOOL OF BUSINESS · QUINNIPIAC UNIVERSITY · HAMDEN, CT</p>
+
+      <h1 class="mt-6 max-w-3xl text-4xl leading-[1.05] sm:text-7xl font-bold">
+        Building a vibrant <span class="text-paper/90 italic font-normal">blockchain community</span> at Quinnipiac and beyond.
+      </h1>
+
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-paper/85 sm:text-lg">
+        Quinnipiac Blockchain is a student-led organization providing education, resources, and open discussions
+        around digital assets, Web3, and emerging financial technologies.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a
+          href="/join"
+          class="marker-rule bg-gold px-6 py-3.5 text-navy transition-transform hover:-translate-y-0.5 inline-block font-semibold"
+        >
+          Become a member
+        </a>
+        <a
+          href="/activities"
+          class="marker-rule border border-paper/30 px-6 py-3.5 text-paper transition-colors hover:border-paper hover:text-paper inline-block"
+        >
+          What we do →
+        </a>
       </div>
 
-      <dl class="stats-grid">
-        <div class="stat-card">
-          <dt class="stat-term">Meetings</dt>
-          <dd class="stat-desc">Weekly on campus</dd>
+      <dl class="mt-16 grid max-w-2xl grid-cols-2 gap-px border border-paper/15 bg-paper/15 sm:grid-cols-4">
+        <div class="bg-navy px-4 py-5">
+          <dt class="text-2xl text-paper font-semibold">Meetings</dt>
+          <dd class="marker-rule mt-1 text-paper/70">Weekly on campus</dd>
         </div>
-        <div class="stat-card">
-          <dt class="stat-term">Focus</dt>
-          <dd class="stat-desc">Crypto &amp; Web3</dd>
+        <div class="bg-navy px-4 py-5">
+          <dt class="text-2xl text-paper font-semibold">Focus</dt>
+          <dd class="marker-rule mt-1 text-paper/70">Crypto & Web3</dd>
         </div>
-        <div class="stat-card">
-          <dt class="stat-term">Open To</dt>
-          <dd class="stat-desc">All majors &amp; years</dd>
+        <div class="bg-navy px-4 py-5">
+          <dt class="text-2xl text-paper font-semibold">Open To</dt>
+          <dd class="marker-rule mt-1 text-paper/70">All majors & years</dd>
         </div>
-        <div class="stat-card">
-          <dt class="stat-term">Location</dt>
-          <dd class="stat-desc">School of Business</dd>
+        <div class="bg-navy px-4 py-5">
+          <dt class="text-2xl text-paper font-semibold">Location</dt>
+          <dd class="marker-rule mt-1 text-paper/70">School of Business</dd>
         </div>
       </dl>
     </div>
   </section>
 
   <!-- EXPLORE THE CLUB SECTION -->
-  <section class="section-light" id="activities">
-    <div class="container">
-      <h2>Explore the club</h2>
-      <div class="cards-grid">
-        <a href="#about" class="card" id="about">
-          <div>
-            <h3>About</h3>
-            <p>Our mission, leadership team, and student goals.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+  <section class="bg-background text-foreground">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+      <div class="mb-10 border-t border-border pt-4">
+        <h2 class="mt-4 text-3xl leading-tight sm:text-5xl font-bold">Explore the club</h2>
+      </div>
+
+      <div class="grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <a href="/about" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">About</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Our mission, leadership team, and student goals.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
-        <a href="#activities" class="card">
-          <div>
-            <h3>What We Do</h3>
-            <p>Weekly group discussions, case studies, and workshops.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+
+        <a href="/activities" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">What We Do</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Weekly group discussions, case studies, and workshops.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
-        <a href="#events" class="card" id="events">
-          <div>
-            <h3>Events</h3>
-            <p>Campus speaker panels and collegiate hackathons.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+
+        <a href="/events" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">Events</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Campus speaker panels and collegiate hackathons.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
-        <a href="#values" class="card" id="values">
-          <div>
-            <h3>Values</h3>
-            <p>Open discussion, peer learning, and tech literacy.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+
+        <a href="/values" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">Values</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Open discussion, peer learning, and tech literacy.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
-        <a href="#courses" class="card" id="courses">
-          <div>
-            <h3>Courses</h3>
-            <p>Relevant fintech and business courses at QU.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+
+        <a href="/courses" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">Courses</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Relevant fintech and business courses at QU.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
-        <a href="#connect" class="card" id="connect">
-          <div>
-            <h3>Connect</h3>
-            <p>Follow our student channels and announcements.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+
+        <a href="/connect" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">Connect</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Follow our student channels and announcements.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
-        <a href="#join" class="card" id="join">
-          <div>
-            <h3>Join</h3>
-            <p>Open to all Quinnipiac undergraduate and graduate students.</p>
-          </div>
-          <span class="link-arrow">Visit page &rarr;</span>
+
+        <a href="/join" class="bg-card p-7 transition-colors hover:bg-secondary block">
+          <h3 class="text-xl font-semibold">Join</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Open to all Quinnipiac undergraduate and graduate students.</p>
+          <span class="marker-rule mt-6 block text-gold">Visit page →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
-  <section class="faq-section">
-    <div class="container">
-      <div class="faq-header">
-        <p class="faq-chip">GOT QUESTIONS?</p>
-        <h2>Frequently asked questions</h2>
+  <!-- INTERACTIVE FEATURE: FAQ ACCORDION -->
+  <section class="border-t border-border bg-card text-card-foreground">
+    <div class="mx-auto max-w-4xl px-5 py-20 sm:px-8 sm:py-24">
+      <div class="mb-10">
+        <p class="marker-rule text-gold">GOT QUESTIONS?</p>
+        <h2 class="mt-4 text-3xl leading-tight sm:text-5xl font-bold">Frequently asked questions</h2>
       </div>
 
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-button" type="button" aria-expanded="false">
+      <div class="divide-y divide-border border-y border-border" id="faq-container">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item py-2">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="faq-toggle flex w-full items-center justify-between py-4 text-left text-xl transition-colors hover:text-gold font-medium"
+          >
             <span>Do I need coding or crypto experience to join?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon ml-4 font-mono text-2xl leading-none">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-answer hidden pb-5 pt-1 text-base leading-relaxed text-muted-foreground">
             <p>No prior background is required. The club is open to all Quinnipiac undergraduate and graduate students across business, engineering, arts and sciences, and health disciplines.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-button" type="button" aria-expanded="false">
+        <!-- FAQ Item 2 -->
+        <div class="faq-item py-2">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="faq-toggle flex w-full items-center justify-between py-4 text-left text-xl transition-colors hover:text-gold font-medium"
+          >
             <span>When and where are weekly meetings held?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon ml-4 font-mono text-2xl leading-none">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-answer hidden pb-5 pt-1 text-base leading-relaxed text-muted-foreground">
             <p>Meetings are held on weekday evenings in the School of Business on the Mount Carmel campus. Meeting rooms and schedules are shared via our student portal.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-button" type="button" aria-expanded="false">
+        <!-- FAQ Item 3 -->
+        <div class="faq-item py-2">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="faq-toggle flex w-full items-center justify-between py-4 text-left text-xl transition-colors hover:text-gold font-medium"
+          >
             <span>What activities do members participate in?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon ml-4 font-mono text-2xl leading-none">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-answer hidden pb-5 pt-1 text-base leading-relaxed text-muted-foreground">
             <p>Members participate in weekly guided discussions, hear from guest speakers in fintech, work on project case studies, and attend collegiate hackathons.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-button" type="button" aria-expanded="false">
+        <!-- FAQ Item 4 -->
+        <div class="faq-item py-2">
+          <button
+            type="button"
+            aria-expanded="false"
+            class="faq-toggle flex w-full items-center justify-between py-4 text-left text-xl transition-colors hover:text-gold font-medium"
+          >
             <span>How do I become an official member?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon ml-4 font-mono text-2xl leading-none">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-answer hidden pb-5 pt-1 text-base leading-relaxed text-muted-foreground">
             <p>Click the 'Become a member' button to join our roster through Quinnipiac's student organization portal and sign up for our communication channels.</p>
           </div>
         </div>
@@ -611,50 +235,29 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div>
-          <p class="footer-title">Quinnipiac Blockchain</p>
-          <p>School of Business · 275 Mount Carmel Ave, Hamden, CT 06518</p>
-        </div>
-        <nav class="footer-nav">
-          <a href="#about">About</a>
-          <a href="#activities">What We Do</a>
-          <a href="#events">Events</a>
-          <a href="#values">Values</a>
-          <a href="#courses">Courses</a>
-          <a href="#connect">Connect</a>
-          <a href="#join">Join</a>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 · ALL RIGHTS RESERVED</p>
-      </div>
-    </div>
-  </footer>
-
+  <!-- Vanilla JS handling accordion toggle behavior -->
   <script>
-    const faqButtons = document.querySelectorAll('.faq-button');
+    document.querySelectorAll('.faq-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-    faqButtons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        const icon = btn.querySelector('.faq-icon');
-        const isOpen = content.classList.contains('open');
-
-        // Close all items
-        document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
-        document.querySelectorAll('.faq-button').forEach(b => {
-          b.setAttribute('aria-expanded', 'false');
-          b.querySelector('.faq-icon').textContent = '+';
+        // Close all items first (matching original React single-open behavior)
+        document.querySelectorAll('.faq-item').forEach((otherItem) => {
+          const otherBtn = otherItem.querySelector('.faq-toggle');
+          const otherAns = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherBtn.setAttribute('aria-expanded', 'false');
+          otherAns.classList.add('hidden');
+          otherIcon.textContent = '+';
         });
 
-        // Toggle clicked item
-        if (!isOpen) {
-          content.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
+        // Toggle clicked item if it was closed
+        if (!isExpanded) {
+          button.setAttribute('aria-expanded', 'true');
+          answer.classList.remove('hidden');
           icon.textContent = '−';
         }
       });
