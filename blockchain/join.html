@@ -4,116 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connect & Join — Quinnipiac Blockchain</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"Space Grotesk"', 'monospace'] },
+          fontFamily: { serif: ['"Times New Roman"', 'Times', 'serif'] },
           colors: { brand: { 50: '#f0f7ff', 100: '#e0effe', 200: '#bae0fd', 300: '#7dd0fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' } }
         }
       }
     }
   </script>
+  <style>
+    body, h1, h2, h3, p, a, button, span { font-family: "Times New Roman", Times, serif; }
+  </style>
 </head>
-<body class="bg-brand-50 text-brand-900 antialiased">
-  <header class="sticky top-0 z-50 border-b border-brand-200/80 bg-white/90 backdrop-blur-md">
+<body class="bg-brand-50 text-brand-900 antialiased font-serif">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 border-b border-brand-200/80 bg-white/95 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
       <a href="index.html" class="flex items-center gap-3">
-        <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-100 font-mono text-sm font-bold text-brand-700 border border-brand-200">QB</span>
-        <span class="font-bold text-lg tracking-tight text-brand-900">Quinnipiac Blockchain</span>
+        <span class="flex h-9 w-9 items-center justify-center rounded border border-brand-300 bg-brand-100 text-sm font-bold text-brand-800">QB</span>
+        <span class="text-xl font-bold tracking-tight text-brand-900">Quinnipiac Blockchain</span>
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-brand-700">
-        <a href="about.html" class="hover:text-brand-500">About</a>
-        <a href="activities.html" class="hover:text-brand-500">What We Do</a>
-        <a href="events.html" class="hover:text-brand-500">Events</a>
-        <a href="values.html" class="hover:text-brand-500">Values</a>
-        <a href="courses.html" class="hover:text-brand-500">Courses</a>
-        <a href="join.html" class="text-brand-500">Connect</a>
+      <nav class="hidden md:flex items-center gap-7 text-base font-semibold text-brand-800">
+        <a href="about.html" class="hover:text-brand-600">About</a>
+        <a href="activities.html" class="hover:text-brand-600">What We Do</a>
+        <a href="events.html" class="hover:text-brand-600">Events</a>
+        <a href="values.html" class="hover:text-brand-600">Values</a>
+        <a href="courses.html" class="hover:text-brand-600">Courses</a>
+        <a href="join.html" class="text-brand-600">Connect</a>
       </nav>
-      <a href="join.html" class="rounded-lg bg-brand-600 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-brand-700">Join Club</a>
+      <a href="join.html" class="rounded bg-brand-600 px-5 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-sm hover:bg-brand-700">Join Club</a>
     </div>
   </header>
 
   <main class="py-16 sm:py-24">
     <div class="mx-auto max-w-3xl px-5 sm:px-8">
-      <p class="font-mono text-xs font-bold uppercase tracking-widest text-brand-600">Get Involved</p>
-      <h1 class="text-4xl font-extrabold sm:text-5xl mt-2 tracking-tight text-brand-900">Connect & Join</h1>
-      <p class="mt-4 text-lg text-brand-800 leading-relaxed">
+      <p class="text-xs font-bold uppercase tracking-widest text-brand-700">Get Involved</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mt-2 tracking-tight text-brand-900">Connect & Join</h1>
+      <p class="mt-4 text-xl text-brand-800 leading-relaxed">
         Membership is free and open to all enrolled Quinnipiac students. Follow these steps to register and receive meeting schedules.
       </p>
 
       <div class="mt-10 space-y-6">
-  <!-- Step 1: Direct Link to your Club ID on CampusGroups -->
-  <div class="rounded border border-brand-200 bg-white p-8 shadow-sm">
-    <div class="flex items-center gap-4">
-      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-800">1</span>
-      <div>
-        <h2 class="text-2xl font-bold text-brand-900">Join via Quinnipiac Do You QU / CampusGroups</h2>
-        <p class="text-base text-brand-800">Authenticate with your Quinnipiac Single Sign-On to join our official university roster.</p>
-      </div>
-    </div>
-    <div class="mt-6">
-      <a 
-        href="https://quinnipiac.campusgroups.com/feeds?type=club&type_id=35573&tab=about" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="inline-block rounded bg-brand-600 px-6 py-3 text-base font-bold text-white shadow hover:bg-brand-700 transition-all"
-      >
-        Open Quinnipiac Blockchain on CampusGroups →
-      </a>
-    </div>
-  </div>
+        <!-- Step 1 -->
+        <div class="rounded border border-brand-200 bg-white p-8 shadow-sm">
+          <div class="flex items-center gap-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-800">1</span>
+            <div>
+              <h2 class="text-2xl font-bold text-brand-900">Join the Official Student Roster</h2>
+              <p class="text-base text-brand-800">Register through Quinnipiac's student involvement platform.</p>
+            </div>
+          </div>
+          <div class="mt-6">
+            <a 
+              href="https://quinnipiac.campusgroups.com/feeds?type=club&type_id=35573&tab=about" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-block rounded bg-brand-600 px-6 py-3 text-base font-bold text-white shadow hover:bg-brand-700 transition-all"
+            >
+              Sign In via QU CampusGroups Portal →
+            </a>
+          </div>
+        </div>
 
-  <!-- Step 2: Social Channels pulled from CampusGroups Website/Social Links -->
-  <div class="rounded border border-brand-200 bg-white p-8 shadow-sm">
-    <div class="flex items-center gap-4">
-      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-800">2</span>
-      <div>
-        <h2 class="text-2xl font-bold text-brand-900">Student Channels & Communities</h2>
-        <p class="text-base text-brand-800">Check the external links published on our CampusGroups page for real-time announcements.</p>
-      </div>
-    </div>
-    <div class="mt-6 flex flex-wrap gap-3">
-      <!-- Paste actual invite links listed on your portal -->
-      <a href="[PASTE_DISCORD_URL]" target="_blank" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">Discord Server</a>
-      <a href="[PASTE_GROUPME_URL]" target="_blank" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">GroupMe Chat</a>
-      <a href="[PASTE_LINKEDIN_URL]" target="_blank" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">LinkedIn</a>
-      <a href="[PASTE_INSTAGRAM_URL]" target="_blank" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">Instagram</a>
-    </div>
-  </div>
+        <!-- Step 2 -->
+        <div class="rounded border border-brand-200 bg-white p-8 shadow-sm">
+          <div class="flex items-center gap-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-800">2</span>
+            <div>
+              <h2 class="text-2xl font-bold text-brand-900">Community Channels</h2>
+              <p class="text-base text-brand-800">Weekly room announcements, discussion threads, and resource links.</p>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://quinnipiac.campusgroups.com/feeds?type=club&type_id=35573" target="_blank" rel="noopener noreferrer" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">CampusGroups Feed</a>
+            <a href="https://www.linkedin.com/school/quinnipiac-university/" target="_blank" rel="noopener noreferrer" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">LinkedIn Network</a>
+            <a href="https://www.qu.edu/schools/business/" target="_blank" rel="noopener noreferrer" class="rounded border border-brand-300 bg-brand-50 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-800 hover:border-brand-500">School of Business Hub</a>
+          </div>
+        </div>
 
-  <!-- Step 3: Contact Email listed on CampusGroups -->
-  <div class="rounded border border-brand-200 bg-white p-8 shadow-sm">
-    <div class="flex items-center gap-4">
-      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-800">3</span>
-      <div>
-        <h2 class="text-2xl font-bold text-brand-900">Contact Organization Leadership</h2>
-        <p class="text-base text-brand-800">Official inquiries, corporate partnerships, and campus collaborations.</p>
+        <!-- Step 3 -->
+        <div class="rounded border border-brand-200 bg-white p-8 shadow-sm">
+          <div class="flex items-center gap-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-800">3</span>
+            <div>
+              <h2 class="text-2xl font-bold text-brand-900">Contact Executive Board</h2>
+              <p class="text-base text-brand-800">Have questions about leadership, guest speaking, or partnerships?</p>
+            </div>
+          </div>
+          <p class="mt-4 text-base text-brand-800">
+            Email the student board directly at: <a href="mailto:blockchain@quinnipiac.edu" class="font-bold text-brand-600 hover:underline">blockchain@quinnipiac.edu</a>
+          </p>
+        </div>
       </div>
     </div>
-    <p class="mt-4 text-base text-brand-800">
-      Club Email: <a href="mailto:[EMAIL_FROM_CAMPUSGROUPS]" class="font-bold text-brand-600 hover:underline">[EMAIL_FROM_CAMPUSGROUPS]</a>
-    </p>
-  </div>
-</div>
   </main>
 
-  <footer class="border-t border-brand-200 bg-white py-12 text-sm text-brand-700">
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-200 bg-white py-12 text-base text-brand-800">
     <div class="mx-auto max-w-6xl px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <p class="font-bold text-brand-900">Quinnipiac Blockchain</p>
-      <nav class="flex gap-5 text-xs font-semibold uppercase tracking-wider text-brand-700">
+      <p class="text-lg font-bold text-brand-900">Quinnipiac Blockchain</p>
+      <nav class="flex gap-5 text-sm font-semibold uppercase tracking-wider text-brand-800">
         <a href="about.html">About</a>
         <a href="activities.html">What We Do</a>
         <a href="events.html">Events</a>
         <a href="values.html">Values</a>
         <a href="courses.html">Courses</a>
-        <a href="join.html" class="text-brand-500">Join</a>
+        <a href="join.html" class="text-brand-600">Join</a>
       </nav>
-      <p class="font-mono text-xs text-brand-400">© 2026 QU BLOCKCHAIN</p>
+      <p class="text-xs uppercase tracking-wider text-brand-500">© 2026 QU BLOCKCHAIN</p>
     </div>
   </footer>
 </body>
