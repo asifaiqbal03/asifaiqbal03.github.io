@@ -4,86 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What We Do — Quinnipiac Blockchain</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"Space Grotesk"', 'monospace'] },
+          fontFamily: { serif: ['"Times New Roman"', 'Times', 'serif'] },
           colors: { brand: { 50: '#f0f7ff', 100: '#e0effe', 200: '#bae0fd', 300: '#7dd0fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' } }
         }
       }
     }
   </script>
+  <style>
+    body, h1, h2, h3, p, a, button, span { font-family: "Times New Roman", Times, serif; }
+  </style>
 </head>
-<body class="bg-brand-50 text-brand-900 antialiased">
-  <header class="sticky top-0 z-50 border-b border-brand-200/80 bg-white/90 backdrop-blur-md">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-      <a href="index.html" class="flex items-center gap-3">
-        <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-100 font-mono text-sm font-bold text-brand-700 border border-brand-200">QB</span>
-        <span class="font-bold text-lg tracking-tight text-brand-900">Quinnipiac Blockchain</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-brand-700">
-        <a href="about.html" class="hover:text-brand-500">About</a>
-        <a href="activities.html" class="text-brand-500">What We Do</a>
-        <a href="events.html" class="hover:text-brand-500">Events</a>
-        <a href="values.html" class="hover:text-brand-500">Values</a>
-        <a href="courses.html" class="hover:text-brand-500">Courses</a>
-        <a href="join.html" class="hover:text-brand-500">Connect</a>
-      </nav>
-      <a href="join.html" class="rounded-lg bg-brand-600 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-sm hover:bg-brand-700">Join Club</a>
-    </div>
-  </header>
+<body class="bg-brand-50 text-brand-900 antialiased font-serif selection:bg-brand-300 selection:text-brand-900">
+
+  <!-- Shared Header & 3-Bar Drawer injects here -->
+  <div id="site-header"></div>
 
   <main class="py-16 sm:py-24">
     <div class="mx-auto max-w-5xl px-5 sm:px-8">
-      <p class="font-mono text-xs font-bold uppercase tracking-widest text-brand-600">Initiatives</p>
-      <h1 class="text-4xl font-extrabold sm:text-5xl mt-2 tracking-tight text-brand-900">What We Do</h1>
-      <p class="mt-4 text-lg text-brand-800 leading-relaxed max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-widest text-brand-700">Initiatives</p>
+      <h1 class="text-4xl sm:text-5xl font-bold mt-2 tracking-tight text-brand-900">What We Do</h1>
+      <p class="mt-4 text-xl text-brand-800 leading-relaxed max-w-2xl">
         From hands-on software labs to macroeconomic discussions on digital assets, here is how members engage every week.
       </p>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2">
-        <div class="rounded-2xl border border-brand-200 bg-white p-7 shadow-sm">
-          <span class="font-mono text-xs font-bold text-brand-500">01 / WEEKLY DISCUSSIONS</span>
-          <h2 class="text-xl font-bold text-brand-900 mt-2">Market & Protocol Deep Dives</h2>
-          <p class="mt-3 text-sm text-brand-800 leading-relaxed">Breakdowns of major layer-1 networks, Layer-2 rollups, DeFi protocols, regulatory policies, and institutional adoption trends.</p>
+        <div class="rounded border border-brand-200 bg-white p-7 shadow-sm">
+          <span class="text-xs font-bold text-brand-700 tracking-wider">01 / WEEKLY DISCUSSIONS</span>
+          <h2 class="text-2xl font-bold text-brand-900 mt-2">Market & Protocol Deep Dives</h2>
+          <p class="mt-3 text-base text-brand-800 leading-relaxed">Breakdowns of major layer-1 networks, Layer-2 rollups, DeFi protocols, regulatory policies, and institutional adoption trends.</p>
         </div>
-        <div class="rounded-2xl border border-brand-200 bg-white p-7 shadow-sm">
-          <span class="font-mono text-xs font-bold text-brand-500">02 / TECHNICAL LABS</span>
-          <h2 class="text-xl font-bold text-brand-900 mt-2">Web3 Workshops</h2>
-          <p class="mt-3 text-sm text-brand-800 leading-relaxed">Introduction to non-custodial wallets, smart contract development (Solidity), decentralized identity, and token economics.</p>
+        <div class="rounded border border-brand-200 bg-white p-7 shadow-sm">
+          <span class="text-xs font-bold text-brand-700 tracking-wider">02 / TECHNICAL LABS</span>
+          <h2 class="text-2xl font-bold text-brand-900 mt-2">Web3 Workshops</h2>
+          <p class="mt-3 text-base text-brand-800 leading-relaxed">Introduction to non-custodial wallets, smart contract development (Solidity), decentralized identity, and token economics.</p>
         </div>
-        <div class="rounded-2xl border border-brand-200 bg-white p-7 shadow-sm">
-          <span class="font-mono text-xs font-bold text-brand-500">03 / PROJECT INCUBATION</span>
-          <h2 class="text-xl font-bold text-brand-900 mt-2">Case Studies & Research</h2>
-          <p class="mt-3 text-sm text-brand-800 leading-relaxed">Interdisciplinary student teams analyzing business models, supply chain integrations, and security vulnerabilities.</p>
+        <div class="rounded border border-brand-200 bg-white p-7 shadow-sm">
+          <span class="text-xs font-bold text-brand-700 tracking-wider">03 / PROJECT INCUBATION</span>
+          <h2 class="text-2xl font-bold text-brand-900 mt-2">Case Studies & Research</h2>
+          <p class="mt-3 text-base text-brand-800 leading-relaxed">Interdisciplinary student teams analyzing business models, supply chain integrations, and security vulnerabilities.</p>
         </div>
-        <div class="rounded-2xl border border-brand-200 bg-white p-7 shadow-sm">
-          <span class="font-mono text-xs font-bold text-brand-500">04 / COMPETITIONS</span>
-          <h2 class="text-xl font-bold text-brand-900 mt-2">Hackathons & Summits</h2>
-          <p class="mt-3 text-sm text-brand-800 leading-relaxed">Sending delegation cohorts to regional collegiate blockchain conferences, pitch competitions, and developer hackathons.</p>
+        <div class="rounded border border-brand-200 bg-white p-7 shadow-sm">
+          <span class="text-xs font-bold text-brand-700 tracking-wider">04 / COMPETITIONS</span>
+          <h2 class="text-2xl font-bold text-brand-900 mt-2">Hackathons & Summits</h2>
+          <p class="mt-3 text-base text-brand-800 leading-relaxed">Sending delegation cohorts to regional collegiate blockchain conferences, pitch competitions, and developer hackathons.</p>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="border-t border-brand-200 bg-white py-12 text-sm text-brand-700">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <p class="font-bold text-brand-900">Quinnipiac Blockchain</p>
-      <nav class="flex gap-5 text-xs font-semibold uppercase tracking-wider text-brand-700">
-        <a href="about.html">About</a>
-        <a href="activities.html" class="text-brand-500">What We Do</a>
-        <a href="events.html">Events</a>
-        <a href="values.html">Values</a>
-        <a href="courses.html">Courses</a>
-        <a href="join.html">Join</a>
-      </nav>
-      <p class="font-mono text-xs text-brand-400">© 2026 QU BLOCKCHAIN</p>
-    </div>
-  </footer>
+  <!-- Shared Footer injects here -->
+  <div id="site-footer"></div>
+
+  <!-- Shared JS Engine -->
+  <script src="nav.js"></script>
 </body>
 </html>
