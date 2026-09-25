@@ -4,10 +4,10 @@
 <head>
   <!-- Character encoding configuration for universal symbol and text support -->
   <meta charset="UTF-8" />
-  
+
   <!-- Responsive viewport configuration for optimal mobile, tablet, and desktop scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Browser tab title displayed in search engine previews and browser windows -->
   <title>Asifa Iqbal | Business Analytics & Computer Information Systems</title>
 
@@ -19,22 +19,24 @@
 
   <style>
     /* ==========================================================================
-       CSS CUSTOM PROPERTIES (THEME PALETTE)
-       Defines the white, deep navy, and architectural muted gold color tokens.
+       CSS CUSTOM PROPERTIES (BABY BLUE & WHITE THEME PALETTE)
        ========================================================================== */
     :root {
-      --bg-primary: #ffffff;        /* Canvas root background */
-      --bg-surface: #f8fafc;        /* Off-white background for timeline and skill blocks */
-      --bg-card: #ffffff;           /* Card container surface */
-      --navy-primary: #0a192f;      /* Midnight navy for headlines and dominant text */
-      --navy-secondary: #1e3a5f;    /* Mid-tier slate navy for sub-labels and button hover */
-      --text-muted: #475569;        /* Neutral slate gray for body readability */
-      --accent-gold: #c5a059;       /* Muted gold accent for borders and highlights */
-      --accent-gold-hover: #a3803e; /* Darker gold active/hover state */
-      --border-color: #cbd5e1;      /* Standard card outline border */
-      --border-subtle: #e2e8f0;     /* Thin section separator lines */
-      --tag-bg: #f1f5f9;            /* Background for skill and framework pills */
-      --tag-border: #cbd5e1;        /* Outer boundary stroke for tags */
+      --bg-primary: #f8fbff;        /* Soft icy-white/baby blue tint canvas */
+      --bg-surface: #ffffff;        /* Pure white for container blocks */
+      --bg-card: #ffffff;           /* Pure white card container surface */
+      --baby-blue-50: #f0f7ff;      /* Very soft baby blue */
+      --baby-blue-100: #e0effe;     /* Light pastel baby blue */
+      --baby-blue-200: #bae0fd;     /* Accent baby blue */
+      --brand-blue: #0284c7;        /* Vibrant sky blue for key accents */
+      --brand-blue-hover: #0369a1;  /* Darker sky blue for hover */
+      --text-main: #0c4a6e;         /* Deep ink navy-blue for crisp high-contrast readability */
+      --text-muted: #335d7e;        /* Balanced slate-blue for secondary body text */
+      --border-subtle: #e2eefb;     /* Very gentle light blue divider */
+      --border-color: #bae0fd;      /* Baby blue boundary border */
+      --tag-bg: #f0f7ff;            /* Soft blue background for tags */
+      --tag-border: #bae0fd;        /* Outer boundary stroke for tags */
+      --tag-text: #0369a1;          /* Tag font color */
     }
 
     /* Universal box-sizing reset for consistent element padding and margin calculations */
@@ -48,8 +50,8 @@
     body {
       font-family: "Times New Roman", Times, Georgia, serif;
       background-color: var(--bg-primary);
-      color: var(--navy-primary);
-      line-height: 1.7;             /* Elevated line spacing optimized for serif readability */
+      color: var(--text-main);
+      line-height: 1.7;
     }
 
     /* Max-width container keeping content centered and readable on ultra-wide screens */
@@ -61,53 +63,53 @@
 
     /* ==========================================================================
        HEADER & NAVIGATION
-       Frosted, sticky navigation pinned to the top of the viewport.
        ========================================================================== */
     header {
-      border-bottom: 1px solid var(--border-subtle);
-      background-color: rgba(255, 255, 255, 0.95);
-      position: sticky;             /* Fixes header during page scroll */
+      border-bottom: 1px solid var(--border-color);
+      background-color: rgba(255, 255, 255, 0.94);
+      position: sticky;
       top: 0;
-      z-index: 50;                  /* Layered over scrolling content */
-      backdrop-filter: blur(8px);   /* Translucent blur backdrop */
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(186, 224, 253, 0.25);
     }
 
     nav {
-      display: flex;                /* Flex layout: brand left, anchor links right */
+      display: flex;
       justify-content: space-between;
       align-items: center;
       height: 4.25rem;
     }
 
     .nav-brand {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--navy-primary);
+      color: var(--text-main);
       text-decoration: none;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
-    /* Decorative gold dot at the end of the brand title */
+    /* Decorative baby blue accent dot at the end of the brand title */
     .nav-brand span {
-      color: var(--accent-gold);
+      color: var(--brand-blue);
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;                  /* Spacing between navigation categories */
-      list-style: none;             /* Disables bullet points */
+      gap: 1.5rem;
+      list-style: none;
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;       /* Smooth color transition on hover */
+      font-weight: 600;
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: var(--navy-secondary);
+      color: var(--brand-blue);
     }
 
     /* ==========================================================================
@@ -120,16 +122,16 @@
     /* Capsule badge highlighting academic domain */
     .hero-badge {
       display: inline-block;
-      padding: 0.3rem 0.85rem;
+      padding: 0.35rem 0.9rem;
       font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy-secondary);
-      background: var(--tag-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 9999px;        /* Full radius for rounded pill look */
+      font-weight: 700;
+      color: var(--brand-blue);
+      background: var(--baby-blue-100);
+      border: 1px solid var(--baby-blue-200);
+      border-radius: 9999px;
       margin-bottom: 1.25rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
     }
 
     .hero h1 {
@@ -137,8 +139,8 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 1.25rem;
-      letter-spacing: -0.03em;
-      color: var(--navy-primary);
+      letter-spacing: -0.02em;
+      color: var(--text-main);
     }
 
     .hero p {
@@ -152,44 +154,48 @@
     .hero-actions {
       display: flex;
       gap: 1rem;
-      flex-wrap: wrap;              /* Wraps gracefully on mobile viewports */
+      flex-wrap: wrap;
     }
 
     /* Reusable base button styles */
     .btn {
       display: inline-flex;
       align-items: center;
-      padding: 0.7rem 1.4rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 6px;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s ease-in-out;
     }
 
-    /* Solid dark navy button */
+    /* Solid baby-blue primary button */
     .btn-primary {
-      background-color: var(--navy-primary);
+      background-color: var(--brand-blue);
       color: #ffffff;
-      border: 1px solid var(--navy-primary);
+      border: 1px solid var(--brand-blue);
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.2);
     }
 
     .btn-primary:hover {
-      background-color: var(--navy-secondary);
-      border-color: var(--navy-secondary);
+      background-color: var(--brand-blue-hover);
+      border-color: var(--brand-blue-hover);
+      transform: translateY(-1px);
     }
 
-    /* Outlined gold accent button */
+    /* Outlined secondary button */
     .btn-secondary {
-      background-color: transparent;
-      color: var(--navy-primary);
-      border: 1.5px solid var(--accent-gold);
+      background-color: #ffffff;
+      color: var(--brand-blue);
+      border: 1.5px solid var(--border-color);
     }
 
     .btn-secondary:hover {
-      background-color: var(--tag-bg);
-      border-color: var(--accent-gold-hover);
+      background-color: var(--baby-blue-50);
+      border-color: var(--brand-blue);
+      color: var(--brand-blue-hover);
+      transform: translateY(-1px);
     }
 
     /* ==========================================================================
@@ -201,16 +207,16 @@
     }
 
     .section-title {
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-      color: var(--navy-primary);
+      letter-spacing: -0.01em;
+      color: var(--text-main);
     }
 
     .section-subtitle {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 1.05rem;
       margin-bottom: 2.5rem;
     }
 
@@ -226,15 +232,16 @@
     .skill-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
-      border-top: 3px solid var(--accent-gold); /* Gold top accent stripe */
+      border-top: 4px solid var(--brand-blue); /* Baby-blue accent stripe */
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 1.6rem;
+      box-shadow: 0 2px 8px rgba(186, 224, 253, 0.2);
     }
 
     .skill-card h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-bottom: 1rem;
-      color: var(--navy-primary);
+      color: var(--text-main);
     }
 
     .skill-list {
@@ -246,17 +253,17 @@
 
     /* Pill badge for tools, queries, and technical concepts */
     .tag {
-      background-color: var(--bg-card);
-      color: var(--navy-secondary);
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
       border: 1px solid var(--tag-border);
       font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.3rem 0.65rem;
+      font-weight: 700;
+      padding: 0.35rem 0.7rem;
       border-radius: 4px;
     }
 
     /* ==========================================================================
-       FEATURED PROJECTS GRID & DELIVERABLE ACTIONS
+       FEATURED PROJECTS GRID
        ========================================================================== */
     .projects-grid {
       display: grid;
@@ -267,27 +274,32 @@
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-left: 4px solid var(--accent-gold); /* Architectural gold left accent */
+      border-left: 4px solid var(--brand-blue); /* Sky blue left boundary accent */
       border-radius: 8px;
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 3px 10px rgba(186, 224, 253, 0.25);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--brand-blue);
+      transform: translateY(-2px);
     }
 
     .project-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-bottom: 0.75rem;
-      letter-spacing: -0.01em;
-      color: var(--navy-primary);
+      color: var(--text-main);
     }
 
     .project-card p {
       color: var(--text-muted);
       font-size: 0.95rem;
       margin-bottom: 1.25rem;
-      flex-grow: 1;                  /* Expands description to align bottom actions evenly */
+      flex-grow: 1;
     }
 
     .project-meta {
@@ -310,7 +322,8 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(186, 224, 253, 0.2);
     }
 
     .timeline-header {
@@ -321,21 +334,21 @@
     }
 
     .timeline-title {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      color: var(--navy-primary);
+      color: var(--text-main);
     }
 
     .timeline-date {
       font-size: 0.9rem;
-      color: var(--accent-gold);
-      font-weight: 600;
+      color: var(--brand-blue);
+      font-weight: 700;
     }
 
     .timeline-subtitle {
       font-size: 0.95rem;
-      color: var(--navy-secondary);
-      font-weight: 500;
+      color: var(--brand-blue-hover);
+      font-weight: 600;
       margin-bottom: 0.75rem;
     }
 
@@ -349,14 +362,15 @@
        FOOTER
        ========================================================================== */
     footer {
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--border-color);
+      background-color: #ffffff;
       padding: 2.5rem 0;
       text-align: center;
       color: var(--text-muted);
       font-size: 0.9rem;
     }
 
-    /* Responsive adjustments: hides desktop nav links on small mobile screens */
+    /* Responsive adjustments */
     @media (max-width: 640px) {
       .hero h1 {
         font-size: 2rem;
@@ -461,7 +475,7 @@
             </div>
           </div>
           <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="/blockchain/" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">View Project &rarr;</a>
+            <a href="/blockchain/" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">View Project &rarr;</a>
           </div>
         </div>
 
@@ -477,8 +491,7 @@
             </div>
           </div>
           <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <!-- Links to instacart-reorder-presentation.pdf -->
-            <a href="instacart-reorder-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">View Presentation &rarr;</a>
+            <a href="instacart-reorder-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">View Presentation &rarr;</a>
           </div>
         </div>
 
@@ -494,9 +507,8 @@
             </div>
           </div>
           <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <!-- Links to traffic incident PDF deliverables -->
-            <a href="traffic-incident-report.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Project Report &rarr;</a>
-            <a href="traffic-incident-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Presentation &rarr;</a>
+            <a href="traffic-incident-report.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Project Report &rarr;</a>
+            <a href="traffic-incident-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Presentation &rarr;</a>
           </div>
         </div>
 
@@ -512,9 +524,8 @@
             </div>
           </div>
           <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <!-- Links to Ferrari telemetry PDF deliverables -->
-            <a href="ferrari-telemetry-report.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Technical Paper &rarr;</a>
-            <a href="ferrari-telemetry-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Presentation &rarr;</a>
+            <a href="ferrari-telemetry-report.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Technical Paper &rarr;</a>
+            <a href="ferrari-telemetry-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Presentation &rarr;</a>
           </div>
         </div>
 
@@ -530,9 +541,8 @@
             </div>
           </div>
           <div style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <!-- Links to Q-Map systems architecture PDF deliverables -->
-            <a href="qmap-architecture-report.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Technical Specifications &rarr;</a>
-            <a href="qmap-architecture-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Presentation &rarr;</a>
+            <a href="qmap-architecture-report.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Technical Specifications &rarr;</a>
+            <a href="qmap-architecture-presentation.pdf" class="btn btn-secondary" target="_blank" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Presentation &rarr;</a>
           </div>
         </div>
 
