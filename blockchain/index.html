@@ -9,192 +9,151 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            serif: ['"Times New Roman"', 'Times', 'serif'],
-          },
+          fontFamily: { serif: ['"Times New Roman"', 'Times', 'serif'] },
           colors: {
-            brand: {
-              50: '#f0f7ff',
-              100: '#e0effe',
-              200: '#bae0fd',
-              300: '#7dd0fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              800: '#075985',
-              900: '#0c4a6e'
-            }
+            brand: { 50: '#f0f7ff', 100: '#e0effe', 200: '#bae0fd', 300: '#7dd0fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' }
           }
         }
       }
     }
   </script>
   <style>
-    body, h1, h2, h3, p, a, button, span, dt, dd {
-      font-family: "Times New Roman", Times, serif;
-    }
+    body, h1, h2, h3, p, a, button, span, dt, dd { font-family: "Times New Roman", Times, serif; }
   </style>
 </head>
-<body class="bg-brand-50 text-brand-900 antialiased selection:bg-brand-300 selection:text-brand-900 font-serif">
+<body class="bg-brand-50 text-brand-900 antialiased font-serif selection:bg-brand-300 selection:text-brand-900">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 border-b border-brand-200/80 bg-white/95 backdrop-blur-md">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-      <a href="index.html" class="flex items-center gap-3">
-        <span class="flex h-9 w-9 items-center justify-center rounded border border-brand-300 bg-brand-100 text-sm font-bold text-brand-800">QB</span>
-        <span class="text-xl font-bold tracking-tight text-brand-900">Quinnipiac Blockchain</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-7 text-base font-semibold text-brand-800">
-        <a href="about.html" class="hover:text-brand-600 transition-colors">About</a>
-        <a href="activities.html" class="hover:text-brand-600 transition-colors">What We Do</a>
-        <a href="events.html" class="hover:text-brand-600 transition-colors">Events</a>
-        <a href="values.html" class="hover:text-brand-600 transition-colors">Values</a>
-        <a href="courses.html" class="hover:text-brand-600 transition-colors">Courses</a>
-        <a href="join.html" class="hover:text-brand-600 transition-colors">Connect</a>
-      </nav>
-      <a href="join.html" class="rounded bg-brand-600 px-5 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-sm hover:bg-brand-700 transition-all">Join Club</a>
-    </div>
-  </header>
+  <!-- Shared Header & 3-Bar Drawer injects here -->
+  <div id="site-header"></div>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-brand-100 via-brand-50 to-white py-20 sm:py-32 border-b border-brand-200/60">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8 relative">
-      <p class="text-xs font-bold uppercase tracking-widest text-brand-700">School of Business · Quinnipiac University · Hamden, CT</p>
-      <h1 class="mt-6 max-w-3xl text-4xl sm:text-6xl font-bold tracking-tight text-brand-900 leading-[1.15]">
-        Building a vibrant <span class="text-brand-600 italic">blockchain community</span> at Quinnipiac and beyond.
-      </h1>
-      <p class="mt-6 max-w-xl text-lg sm:text-xl text-brand-800 leading-relaxed">
-        Quinnipiac Blockchain is a student-led organization providing education, hands-on resources, and open discussions around digital assets, Web3, and emerging financial technologies.
-      </p>
-      <div class="mt-9 flex flex-wrap gap-4">
-        <a href="join.html" class="rounded bg-brand-600 px-7 py-3 text-base font-bold text-white shadow hover:bg-brand-700 transition-all">Become a member</a>
-        <a href="activities.html" class="rounded border border-brand-300 bg-white px-7 py-3 text-base font-bold text-brand-800 shadow-sm hover:border-brand-500 transition-all">What we do →</a>
-      </div>
-
-      <!-- Stats Bar -->
-    <dl class="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
-  <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
-    <dt class="text-2xl font-bold text-brand-900">Meetings</dt>
-    <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">Weekly on Campus</dd>
-  </div>
-  <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
-    <dt class="text-2xl font-bold text-brand-900">Focus</dt>
-    <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">Crypto & Web3</dd>
-  </div>
-  <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
-    <dt class="text-2xl font-bold text-brand-900">Open To</dt>
-    <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">All QU Students</dd>
-  </div>
-  <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
-    <dt class="text-2xl font-bold text-brand-900">Location</dt>
-    <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">School of Business</dd>
-  </div>
-</dl>
-    </div>
-  </section>
-
-  <!-- EXPLORE GRID -->
-  <section class="py-20 bg-white">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8">
-      <div class="mb-10">
-        <p class="text-xs font-bold uppercase tracking-widest text-brand-700">Navigation Hub</p>
-        <h2 class="text-3xl font-bold text-brand-900 sm:text-4xl mt-2">Explore the club</h2>
-      </div>
-
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="about.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
-          <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">About</h3>
-          <p class="mt-2 text-base text-brand-800 leading-relaxed">Our mission, leadership team, and student goals across disciplines.</p>
-          <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
-        </a>
-        <a href="activities.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
-          <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">What We Do</h3>
-          <p class="mt-2 text-base text-brand-800 leading-relaxed">Weekly group discussions, case studies, hands-on tutorials, and workshops.</p>
-          <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
-        </a>
-        <a href="events.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
-          <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Events</h3>
-          <p class="mt-2 text-base text-brand-800 leading-relaxed">Campus speaker panels, industry workshops, and collegiate hackathons.</p>
-          <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
-        </a>
-        <a href="values.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
-          <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Values</h3>
-          <p class="mt-2 text-base text-brand-800 leading-relaxed">Open discussion, peer learning, financial literacy, and technology ethics.</p>
-          <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
-        </a>
-        <a href="courses.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
-          <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Courses</h3>
-          <p class="mt-2 text-base text-brand-800 leading-relaxed">Relevant fintech, computer science, and business analytics coursework at QU.</p>
-          <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
-        </a>
-        <a href="join.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
-          <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Connect & Join</h3>
-          <p class="mt-2 text-base text-brand-800 leading-relaxed">Official student portal registration and community communication channels.</p>
-          <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION -->
-  <section class="py-20 bg-brand-50 border-t border-brand-200">
-    <div class="mx-auto max-w-4xl px-5 sm:px-8">
-      <p class="text-xs font-bold uppercase tracking-widest text-brand-700">Got questions?</p>
-      <h2 class="text-3xl font-bold text-brand-900 sm:text-4xl mt-2 mb-8">Frequently asked questions</h2>
-
-      <div class="divide-y divide-brand-200 border-y border-brand-200 bg-white rounded shadow-sm px-6">
-        <div class="faq-item py-5">
-          <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
-            <span>Do I need coding or crypto experience to join?</span>
-            <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
-          </button>
-          <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">No prior background is required. The club is open to all Quinnipiac undergraduate and graduate students across business, engineering, arts and sciences, and health disciplines.</p>
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-brand-100 via-brand-50 to-white py-20 sm:py-32 border-b border-brand-200/60">
+      <div class="mx-auto max-w-6xl px-5 sm:px-8 relative">
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-700">School of Business · Quinnipiac University · Hamden, CT</p>
+        <h1 class="mt-6 max-w-3xl text-4xl sm:text-6xl font-bold tracking-tight text-brand-900 leading-[1.15]">
+          Building a vibrant <span class="text-brand-600 italic">blockchain community</span> at Quinnipiac and beyond.
+        </h1>
+        <p class="mt-6 max-w-xl text-lg sm:text-xl text-brand-800 leading-relaxed">
+          Quinnipiac Blockchain is a student-led organization providing education, hands-on resources, and open discussions around digital assets, Web3, and emerging financial technologies.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="join.html" class="rounded bg-brand-600 px-7 py-3 text-base font-bold text-white shadow hover:bg-brand-700 transition-all">Become a member</a>
+          <a href="activities.html" class="rounded border border-brand-300 bg-white px-7 py-3 text-base font-bold text-brand-800 shadow-sm hover:border-brand-500 transition-all">What we do →</a>
         </div>
-        <div class="faq-item py-5">
-          <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
-            <span>When and where are weekly meetings held?</span>
-            <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
-          </button>
-          <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">Meetings are held on weekday evenings in the School of Business on the Mount Carmel campus. Rooms are published on our student portal.</p>
+
+        <!-- Key Metrics Strip -->
+        <dl class="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
+            <dt class="text-2xl font-bold text-brand-900">Meetings</dt>
+            <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">Weekly on Campus</dd>
+          </div>
+          <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
+            <dt class="text-2xl font-bold text-brand-900">Focus</dt>
+            <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">Crypto & Web3</dd>
+          </div>
+          <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
+            <dt class="text-2xl font-bold text-brand-900">Open To</dt>
+            <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">All QU Students</dd>
+          </div>
+          <div class="rounded border border-brand-200 bg-white/90 p-5 shadow-sm">
+            <dt class="text-2xl font-bold text-brand-900">Location</dt>
+            <dd class="mt-1 text-xs font-bold uppercase tracking-wider text-brand-700">School of Business</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- EXPLORE GRID -->
+    <section class="py-20 bg-white">
+      <div class="mx-auto max-w-6xl px-5 sm:px-8">
+        <div class="mb-10">
+          <p class="text-xs font-bold uppercase tracking-widest text-brand-700">Navigation Hub</p>
+          <h2 class="text-3xl font-bold text-brand-900 sm:text-4xl mt-2">Explore the club</h2>
         </div>
-        <div class="faq-item py-5">
-          <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
-            <span>What activities do members participate in?</span>
-            <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
-          </button>
-          <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">Members participate in weekly guided discussions, hear from guest speakers in fintech, work on project case studies, and attend collegiate hackathons.</p>
-        </div>
-        <div class="faq-item py-5">
-          <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
-            <span>How do I become an official member?</span>
-            <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
-          </button>
-          <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">Simply click the "Become a member" button or head to the Join page to register via Quinnipiac's student organization directory.</p>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="about.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
+            <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">About</h3>
+            <p class="mt-2 text-base text-brand-800 leading-relaxed">Our mission, leadership team, and student goals across disciplines.</p>
+            <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
+          </a>
+          <a href="activities.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
+            <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">What We Do</h3>
+            <p class="mt-2 text-base text-brand-800 leading-relaxed">Weekly group discussions, case studies, hands-on tutorials, and workshops.</p>
+            <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
+          </a>
+          <a href="events.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
+            <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Events</h3>
+            <p class="mt-2 text-base text-brand-800 leading-relaxed">Campus speaker panels, industry workshops, and collegiate hackathons.</p>
+            <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
+          </a>
+          <a href="values.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
+            <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Values</h3>
+            <p class="mt-2 text-base text-brand-800 leading-relaxed">Open discussion, peer learning, financial literacy, and technology ethics.</p>
+            <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
+          </a>
+          <a href="courses.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
+            <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Courses</h3>
+            <p class="mt-2 text-base text-brand-800 leading-relaxed">CIS 371, BAN 671, and the online executive Blockchain Mastery Program at QU.</p>
+            <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
+          </a>
+          <a href="join.html" class="group rounded border border-brand-200 bg-brand-50/60 p-7 transition-all hover:border-brand-400 hover:bg-brand-50 hover:shadow-md">
+            <h3 class="text-2xl font-bold text-brand-900 group-hover:text-brand-600 transition-colors">Connect & Join</h3>
+            <p class="mt-2 text-base text-brand-800 leading-relaxed">Official student portal registration and community communication channels.</p>
+            <span class="mt-6 block text-sm font-bold text-brand-700">Visit page →</span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-brand-200 bg-white py-12 text-base text-brand-800">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <p class="text-lg font-bold text-brand-900">Quinnipiac Blockchain</p>
-        <p class="text-sm text-brand-700 mt-1">School of Business · 275 Mount Carmel Ave, Hamden, CT 06518</p>
+    <!-- FAQ -->
+    <section class="py-20 bg-brand-50 border-t border-brand-200">
+      <div class="mx-auto max-w-4xl px-5 sm:px-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-brand-700">Got questions?</p>
+        <h2 class="text-3xl font-bold text-brand-900 sm:text-4xl mt-2 mb-8">Frequently asked questions</h2>
+
+        <div class="divide-y divide-brand-200 border-y border-brand-200 bg-white rounded shadow-sm px-6">
+          <div class="faq-item py-5">
+            <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
+              <span>Do I need coding or crypto experience to join?</span>
+              <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
+            </button>
+            <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">No prior background is required. The club is open to all Quinnipiac undergraduate and graduate students across business, engineering, arts and sciences, and health disciplines.</p>
+          </div>
+          <div class="faq-item py-5">
+            <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
+              <span>When and where are weekly meetings held?</span>
+              <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
+            </button>
+            <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">Meetings are held on weekday evenings in the School of Business on the Mount Carmel campus. Rooms are published on our student portal.</p>
+          </div>
+          <div class="faq-item py-5">
+            <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
+              <span>What activities do members participate in?</span>
+              <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
+            </button>
+            <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">Members participate in weekly guided discussions, hear from guest speakers in fintech, work on project case studies, and attend collegiate hackathons.</p>
+          </div>
+          <div class="faq-item py-5">
+            <button type="button" class="faq-btn flex w-full items-center justify-between text-left text-xl font-bold text-brand-900 hover:text-brand-600">
+              <span>How do I become an official member?</span>
+              <span class="faq-icon text-2xl font-normal text-brand-500">+</span>
+            </button>
+            <p class="faq-ans hidden mt-3 text-base text-brand-800 leading-relaxed">Simply click the "Become a member" button or head to the Join page to register via Quinnipiac's student organization directory.</p>
+          </div>
+        </div>
       </div>
-      <nav class="flex flex-wrap gap-5 text-sm font-semibold uppercase tracking-wider text-brand-800">
-        <a href="about.html" class="hover:text-brand-600">About</a>
-        <a href="activities.html" class="hover:text-brand-600">What We Do</a>
-        <a href="events.html" class="hover:text-brand-600">Events</a>
-        <a href="values.html" class="hover:text-brand-600">Values</a>
-        <a href="courses.html" class="hover:text-brand-600">Courses</a>
-        <a href="join.html" class="hover:text-brand-600">Join</a>
-      </nav>
-      <p class="text-xs uppercase tracking-wider text-brand-500">© 2026 QU BLOCKCHAIN</p>
-    </div>
-  </footer>
+    </section>
+  </main>
 
+  <!-- Shared Footer injects here -->
+  <div id="site-footer"></div>
+
+  <!-- Shared JS Engine -->
+  <script src="nav.js"></script>
+
+  <!-- Accordion script -->
   <script>
     document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
