@@ -19,25 +19,10 @@
     body, h1, h2, h3, p, a, button, span { font-family: "Times New Roman", Times, serif; }
   </style>
 </head>
-<body class="bg-brand-50 text-brand-900 antialiased font-serif">
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 border-b border-brand-200/80 bg-white/95 backdrop-blur-md">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-      <a href="index.html" class="flex items-center gap-3">
-        <span class="flex h-9 w-9 items-center justify-center rounded border border-brand-300 bg-brand-100 text-sm font-bold text-brand-800">QB</span>
-        <span class="text-xl font-bold tracking-tight text-brand-900">Quinnipiac Blockchain</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-7 text-base font-semibold text-brand-800">
-        <a href="about.html" class="hover:text-brand-600">About</a>
-        <a href="activities.html" class="hover:text-brand-600">What We Do</a>
-        <a href="events.html" class="hover:text-brand-600">Events</a>
-        <a href="values.html" class="hover:text-brand-600">Values</a>
-        <a href="courses.html" class="hover:text-brand-600">Courses</a>
-        <a href="join.html" class="text-brand-600">Connect</a>
-      </nav>
-      <a href="join.html" class="rounded bg-brand-600 px-5 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-sm hover:bg-brand-700">Join Club</a>
-    </div>
-  </header>
+<body class="bg-brand-50 text-brand-900 antialiased font-serif selection:bg-brand-300 selection:text-brand-900">
+
+  <!-- Shared Header & 3-Bar Drawer injects here -->
+  <div id="site-header"></div>
 
   <main class="py-16 sm:py-24">
     <div class="mx-auto max-w-3xl px-5 sm:px-8">
@@ -102,20 +87,10 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-brand-200 bg-white py-12 text-base text-brand-800">
-    <div class="mx-auto max-w-6xl px-5 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <p class="text-lg font-bold text-brand-900">Quinnipiac Blockchain</p>
-      <nav class="flex gap-5 text-sm font-semibold uppercase tracking-wider text-brand-800">
-        <a href="about.html">About</a>
-        <a href="activities.html">What We Do</a>
-        <a href="events.html">Events</a>
-        <a href="values.html">Values</a>
-        <a href="courses.html">Courses</a>
-        <a href="join.html" class="text-brand-600">Join</a>
-      </nav>
-      <p class="text-xs uppercase tracking-wider text-brand-500">© 2026 QU BLOCKCHAIN</p>
-    </div>
-  </footer>
+  <!-- Shared Footer injects here -->
+  <div id="site-footer"></div>
+
+  <!-- Shared JS Engine -->
+  <script src="nav.js"></script>
 </body>
 </html>
